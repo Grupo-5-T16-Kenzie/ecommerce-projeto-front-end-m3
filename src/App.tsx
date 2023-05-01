@@ -1,5 +1,13 @@
 import { RoutesMain } from "./routes/RoutesMain";
 
 export const App = () => {
-  return <RoutesMain />;
+  return (
+    <>
+     <RoutesMain />
+     <h1>
+      teste
+     </h1>
+
+    </>
+  )
 };
