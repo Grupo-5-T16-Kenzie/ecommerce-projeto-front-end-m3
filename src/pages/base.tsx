@@ -1,1 +1,0 @@
-/* NÃO FAÇA NADA AQUI, Arquivo criado apenas para subir a arquitetura base do projeto para o GitHub */
