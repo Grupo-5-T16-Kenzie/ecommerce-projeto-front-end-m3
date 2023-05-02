@@ -20,6 +20,9 @@ export interface ICartContext {
   cartProducts: ICartProducts[];
   setCartProducts: React.Dispatch<React.SetStateAction<ICartProducts[]>>;
   handleAddItemToCart: (id: number) => void;
+  removeItemFromCart: (id: number) => void;
+  addItemQuantity: (id: number) => ICartProducts[];
+  removeItemQuantity: (id: number) => ICartProducts[];
 }
 
 export interface IProduct {

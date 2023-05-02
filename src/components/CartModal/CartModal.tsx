@@ -4,7 +4,13 @@ import { StyledCartModal } from "./styledCartModal";
 import { CartTotal } from "./CartTotal/CartTotal";
 
 export const CartModal = () => {
-  const { cartProducts, setCartModal } = useContext(CartContext);
+  const {
+    cartProducts,
+    setCartModal,
+    addItemQuantity,
+    removeItemQuantity,
+    removeItemFromCart,
+  } = useContext(CartContext);
 
   return (
     <StyledCartModal role="dialog">
@@ -28,14 +34,18 @@ export const CartModal = () => {
                         Preço: R$ {item.price}
                       </span>
                       <div className="itemQuantity__container">
-                        <button>&#43;</button>
-                        <span className="itemQuantity">
-                          {item.quantity}
-                        </span>{" "}
-                        <button>&#8722;</button>
+                        <button onClick={() => addItemQuantity(item.id)}>
+                          &#43;
+                        </button>
+                        <span className="itemQuantity">{item.quantity}</span>{" "}
+                        <button onClick={() => removeItemQuantity(item.id)}>
+                          &#8722;
+                        </button>
                       </div>
                     </div>
-                    <button>TrashBin</button>
+                    <button onClick={() => removeItemFromCart(item.id)}>
+                      TrashBin
+                    </button>
                   </li>
                 );
               })}

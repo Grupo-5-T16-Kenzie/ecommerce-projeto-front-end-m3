@@ -44,6 +44,45 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
     }
   };
 
+  const removeItemFromCart = (id: number) => {
+    const newList = cartProducts.filter((item) => item.id !== id);
+    setCartProducts(newList);
+  };
+
+  const addItemQuantity = (id: number) => {
+    if (cartProducts.length > 0) {
+      const foundItem = cartProducts.find((item) => item.id === id);
+
+      if (foundItem) {
+        foundItem.quantity = foundItem.quantity + 1;
+        foundItem.finalPrice = foundItem.price * foundItem.quantity;
+      }
+
+      setCartProducts([...cartProducts]);
+    }
+
+    return cartProducts;
+  };
+
+  const removeItemQuantity = (id: number) => {
+    if (cartProducts.length > 0) {
+      const foundItem = cartProducts.find((item) => item.id === id);
+
+      if (foundItem) {
+        foundItem.quantity = foundItem.quantity - 1;
+        foundItem.finalPrice = foundItem.price * foundItem.quantity;
+      }
+
+      setCartProducts([...cartProducts]);
+
+      if (foundItem?.quantity === 0) {
+        removeItemFromCart(foundItem.id);
+      }
+    }
+
+    return cartProducts;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -52,6 +91,9 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         cartProducts,
         setCartProducts,
         handleAddItemToCart,
+        removeItemFromCart,
+        addItemQuantity,
+        removeItemQuantity,
       }}
     >
       {children}

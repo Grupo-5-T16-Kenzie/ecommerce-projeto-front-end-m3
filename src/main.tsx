@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <ResetStyle />
-      <ToastContainer position="top-left" autoClose={2100} theme="dark" />
+      <ToastContainer position="bottom-left" autoClose={2100} theme="dark" />
       <AuthProductsProvider>
         <CartProvider>
           <App />
