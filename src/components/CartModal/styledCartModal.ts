@@ -12,6 +12,7 @@ export const StyledCartModal = styled.div`
   flex-direction: column;
   position: absolute;
   color: white;
+  z-index: 1;
 
   .cartModal__container::-webkit-scrollbar {
   }

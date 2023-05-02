@@ -5,6 +5,7 @@ import {
   ICartProviderProps,
 } from "../Interfaces/Interfaces";
 import { AuthProductsContext } from "./productsContext";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext({} as ICartContext);
 
@@ -26,7 +27,6 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         return product;
       });
       setCartProducts(foundProducts);
-      console.log(cartProducts);
     } else {
       const foundProduct = products.find((product) => product.id === id);
 
@@ -40,7 +40,7 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         ...cartProducts,
         productWithQuantity,
       ] as ICartProducts[]);
-      console.log(cartProducts);
+      toast.success("Item adicionado ao carrinho");
     }
   };
 
