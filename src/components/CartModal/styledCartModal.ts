@@ -61,6 +61,8 @@ export const StyledCartModal = styled.div`
   .notEmptyCart__container li {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     background-color: white;
     color: black;
     gap: 10px;
@@ -69,14 +71,14 @@ export const StyledCartModal = styled.div`
   .notEmptyCart__container .item__info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 
   .notEmptyCart__container .item__info .item__price {
     color: #9a9999;
   }
 
-  .notEmptyCart__container img {
+  .notEmptyCart__container .product__image {
     min-height: 88px;
     max-height: 88px;
     min-width: 90px;
@@ -106,6 +108,27 @@ export const StyledCartModal = styled.div`
     color: #bb4e4e;
     font-size: 16px;
     font-weight: bold;
+  }
+
+  .deleteItem__btn {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    transition: all;
+    color: #bb4e4e;
+  }
+
+  .deleteItem__btn img {
+    aspect-ratio: 3/2;
+    align-self: flex-end;
+    color: black;
+    transition: all 0.3s;
+  }
+
+  .deleteItem__btn img:hover {
+    transform: scale(1.05);
   }
 
   .notEmptyCart__container .itemQuantity__container .itemQuantity {

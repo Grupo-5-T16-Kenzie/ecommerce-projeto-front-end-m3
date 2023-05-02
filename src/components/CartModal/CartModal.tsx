@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../providers/CartContext";
 import { StyledCartModal } from "./styledCartModal";
 import { CartTotal } from "./CartTotal/CartTotal";
+import TrashBin from "../../assets/trash-bin.svg";
 
 export const CartModal = () => {
   const {
@@ -25,7 +26,7 @@ export const CartModal = () => {
               {cartProducts.map((item) => {
                 return (
                   <li key={item.id}>
-                    <img src={item.img} alt="" />
+                    <img className="product__image" src={item.img} alt="" />
                     <div className="item__info">
                       <span className="item__name">
                         {item.name.substring(0, 15)}...
@@ -43,8 +44,11 @@ export const CartModal = () => {
                         </button>
                       </div>
                     </div>
-                    <button onClick={() => removeItemFromCart(item.id)}>
-                      TrashBin
+                    <button
+                      className="deleteItem__btn"
+                      onClick={() => removeItemFromCart(item.id)}
+                    >
+                      <img src={TrashBin} alt="Lata de lixo" />
                     </button>
                   </li>
                 );
