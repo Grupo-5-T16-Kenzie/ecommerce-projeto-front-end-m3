@@ -21,6 +21,15 @@ export const WishListModal = () => {
             return (
               <li key={item.id}>
                 <img className="product__image" src={item.img} alt="" />
+                <div className="itemInfo__container">
+                  <span className="item__name">
+                    {item.name.substring(0, 15)}...
+                  </span>
+                  <span className="item__category">
+                    {item.category.toUpperCase()}
+                  </span>
+                  <span className="item__price">R$ {item.price}</span>
+                </div>
               </li>
             );
           })}

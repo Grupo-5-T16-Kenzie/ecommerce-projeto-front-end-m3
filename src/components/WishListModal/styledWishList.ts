@@ -59,4 +59,44 @@ export const StyledWishListModal = styled.div`
   .emptyWishList__container span {
     color: #605f5f;
   }
+
+  .wishList__container li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    gap: 10px;
+  }
+
+  .wishList__container img {
+    min-height: 88px;
+    max-height: 88px;
+    min-width: 90px;
+    max-width: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .wishList__container .itemInfo__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .wishList__container .itemInfo__container .item__name {
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .wishList__container .itemInfo__container .item__category {
+    font-size: 0.75rem;
+    color: #9a9999;
+  }
+
+  .wishList__container .itemInfo__container .item__price {
+    font-size: 0.75rem;
+    color: #9a9999;
+  }
 `;
