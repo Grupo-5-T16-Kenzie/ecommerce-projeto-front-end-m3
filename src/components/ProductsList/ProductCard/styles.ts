@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
 export const StyledProductcard = styled.li`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
 border: 1px solid #000000;
 min-height: max-content;
+width: 17rem;
+
+.product__divImg__card{
+    width: 100%;
+    height: 10rem;
+}
 
 .product__img__card{
-    width: 17rem;
-    height: 10rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product__imgLike__card{
@@ -58,5 +69,18 @@ min-height: max-content;
     background-color: #000000;
     color: #FFFFFF;
     margin-bottom: 1rem;
+}
+
+@media(min-width:1023px){
+    width: 18.75rem;
+}
+
+.product__divImg__card{
+    width: 100%;
+}
+
+.product__img__card{
+    width: 100%;
+    height: 10.625rem;
 }
 `

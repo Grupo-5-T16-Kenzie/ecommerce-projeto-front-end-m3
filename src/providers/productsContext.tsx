@@ -3,7 +3,7 @@ import {
   IProduct,
   IProductsContext,
   IProductsProviderProps,
-} from "../components/Interfaces/Interfaces";
+} from "../Interfaces/Interfaces";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 
@@ -18,7 +18,7 @@ export const AuthProductsProvider = ({ children }: IProductsProviderProps) => {
       try {
         const response = await api.get("products");
         setProducts(response.data.map((product: { category: string; }) => ({ ...product, category: product.category.toLowerCase() })));
-
+        toast.success('Lista de produtos carregada com sucesso. Boas compras!')
       } catch (error) {
         toast.error(
           "Não foi possível carregar a lista de produtos. Tente novamente!"
@@ -33,13 +33,14 @@ export const AuthProductsProvider = ({ children }: IProductsProviderProps) => {
     console.log("Selected category: ", selectedCategory);
     setCategory(selectedCategory);
   }
-  
 
+
+  
   return (
     <AuthProductsContext.Provider
-      value={{ products, setProducts, category, setCategory , filterCategories}}
+      value={{ products, setProducts, category, setCategory, filterCategories }}
     >
       {children}
     </AuthProductsContext.Provider>
   );
-};
+}

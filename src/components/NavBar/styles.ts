@@ -1,32 +1,54 @@
 import styled from "styled-components";
 
 export const StyledNavBar = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw;
+  height: 75px;
 
-.buttons__category__container{
+  #category-select {
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-right: 10px;
     width: 100%;
     height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
     background-color: #000000;
     color: #FFFFFF;
     margin: 1.875rem 1rem;
-}
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
-.category-select{
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-}
+    @media (min-width: 1023px) {
+      display: none;
+    }
+  }
 
-@media(min-width:1023px){
+  .option-category {
+    padding: 0.625rem;
+  }
 
+  #buttons_categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
     padding: 0 9rem;
-    
-}
-`
+
+    @media (max-width: 1022px) {
+      display: none;
+    }
+  }
+
+  .category-button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+  }
+`;
