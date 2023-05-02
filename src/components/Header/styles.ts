@@ -15,7 +15,6 @@ box-shadow: 0px 4px 4px 0px #00000040;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
     min-height: 50px;
     
     h1{
@@ -29,9 +28,8 @@ box-shadow: 0px 4px 4px 0px #00000040;
 .header__menu{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 100vw;
     min-height: 50px;
+    justify-content: space-between;
 }
 
 .header__button__signIn{
