@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { IProductCardProps } from "../../../Interfaces/Interfaces";
 import { StyledProductcard } from "./styles";
+import { CartContext } from "../../../providers/CartContext";
 
 export const ProductCard = ({ product }: IProductCardProps) => {
+  const { handleAddItemToCart } = useContext(CartContext);
+
   return (
     <StyledProductcard>
       <div className="product__divImg__card">
@@ -24,7 +28,10 @@ export const ProductCard = ({ product }: IProductCardProps) => {
           </h4>
           <span className="product__price__card">R$ {product.price}</span>
         </div>
-        <button className="product__button__addToCart">
+        <button
+          onClick={() => handleAddItemToCart(product.id)}
+          className="product__button__addToCart"
+        >
           ADICIONE AO CARRINHO
         </button>
       </div>
