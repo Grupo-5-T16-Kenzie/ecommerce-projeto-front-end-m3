@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../providers/CartContext";
 import { StyledCartModal } from "./styledCartModal";
+import { CartTotal } from "./CartTotal/CartTotal";
 
 export const CartModal = () => {
   const { cartProducts, setCartModal } = useContext(CartContext);
@@ -39,6 +40,7 @@ export const CartModal = () => {
                 );
               })}
             </div>
+            <CartTotal />
           </>
         ) : (
           <div className="emptyCart__container">
