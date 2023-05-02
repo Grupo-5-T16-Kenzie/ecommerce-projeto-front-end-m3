@@ -3,6 +3,7 @@ import {
   ICartContext,
   ICartProducts,
   ICartProviderProps,
+  IProduct,
 } from "../Interfaces/Interfaces";
 import { AuthProductsContext } from "./productsContext";
 import { toast } from "react-toastify";
@@ -13,6 +14,8 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
   const { products } = useContext(AuthProductsContext);
   const [cartModal, setCartModal] = useState(false);
   const [cartProducts, setCartProducts] = useState<ICartProducts[]>([]);
+  const [wishListModal, setWishListModal] = useState(false);
+  const [wishListProducts, setWishListProducts] = useState<IProduct[]>([]);
 
   const handleAddItemToCart = (id: number) => {
     const productExists = cartProducts.find((item) => item.id === id);
@@ -44,9 +47,26 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
     }
   };
 
+  const handleAddItemToWishList = (id: number) => {
+    const productExists = wishListProducts.find((item) => item.id === id);
+
+    if (productExists) {
+      toast.error("O item já foi adicionado a lista de favoritos!");
+    } else {
+      const foundProduct = products.find((product) => product.id === id);
+      setWishListProducts([...wishListProducts, foundProduct] as IProduct[]);
+      toast.success("Item adicionado aos favoritos!");
+    }
+  };
+
   const removeItemFromCart = (id: number) => {
     const newList = cartProducts.filter((item) => item.id !== id);
     setCartProducts(newList);
+  };
+
+  const removeItemFromWishList = (id: number) => {
+    const newList = wishListProducts.filter((item) => item.id !== id);
+    setWishListProducts(newList);
   };
 
   const addItemQuantity = (id: number) => {
@@ -94,6 +114,12 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         removeItemFromCart,
         addItemQuantity,
         removeItemQuantity,
+        wishListModal,
+        setWishListModal,
+        wishListProducts,
+        setWishListProducts,
+        handleAddItemToWishList,
+        removeItemFromWishList,
       }}
     >
       {children}

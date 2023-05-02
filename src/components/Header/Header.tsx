@@ -3,7 +3,7 @@ import { StyledHeader } from "./styles";
 import { CartContext } from "../../providers/CartContext";
 
 export const Header = () => {
-  const { setCartModal } = useContext(CartContext);
+  const { setCartModal, setWishListModal } = useContext(CartContext);
   const token = localStorage.getItem("@token");
 
   return (
@@ -24,7 +24,10 @@ export const Header = () => {
             >
               <img src="./src/assets/cart.png" alt="Carrinho de compras" />
             </button>
-            <button className="header__button__wishes">
+            <button
+              onClick={() => setWishListModal(true)}
+              className="header__button__wishes"
+            >
               <img src="./src/assets/wishes.png" alt="Lista de desejos" />
             </button>
           </div>
@@ -48,7 +51,10 @@ export const Header = () => {
             >
               <img src="./src/assets/cart.png" alt="Carrinho de compras" />
             </button>
-            <button className="header__button__wishes">
+            <button
+              onClick={() => setWishListModal(true)}
+              className="header__button__wishes"
+            >
               <img src="./src/assets/wishes.png" alt="Lista de desejos" />
             </button>
           </div>

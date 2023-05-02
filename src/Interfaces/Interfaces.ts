@@ -23,6 +23,12 @@ export interface ICartContext {
   removeItemFromCart: (id: number) => void;
   addItemQuantity: (id: number) => ICartProducts[];
   removeItemQuantity: (id: number) => ICartProducts[];
+  wishListModal: boolean;
+  setWishListModal: React.Dispatch<React.SetStateAction<boolean>>;
+  wishListProducts: IProduct[];
+  setWishListProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
+  handleAddItemToWishList: (id: number) => void;
+  removeItemFromWishList: (id: number) => void;
 }
 
 export interface IProduct {
