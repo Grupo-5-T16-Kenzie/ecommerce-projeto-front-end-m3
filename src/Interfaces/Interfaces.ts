@@ -28,6 +28,7 @@ export interface ICartContext {
   wishListProducts: IProduct[];
   setWishListProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
   handleAddItemToWishList: (id: number) => void;
+  removeItemFromWishList: (id: number) => void;
 }
 
 export interface IProduct {

@@ -60,19 +60,30 @@ export const StyledWishListModal = styled.div`
     color: #605f5f;
   }
 
+  .wishList__container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 20px 20px 20px;
+    min-width: 220px;
+    max-height: 330px;
+    overflow-y: auto;
+    width: 100%;
+  }
+
   .wishList__container li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: white;
     color: black;
     gap: 10px;
   }
 
-  .wishList__container img {
-    min-height: 88px;
-    max-height: 88px;
+  .wishList__container .product__image {
+    min-height: 90px;
+    max-height: 90px;
     min-width: 90px;
     max-width: 90px;
     object-fit: cover;
@@ -98,5 +109,21 @@ export const StyledWishListModal = styled.div`
   .wishList__container .itemInfo__container .item__price {
     font-size: 0.75rem;
     color: #9a9999;
+  }
+
+  .wishList__container .btns__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wishList__container .btns__container img {
+    max-width: 30px;
+    max-height: 30px;
+    transition: all 0.2s;
+  }
+
+  .wishList__container .btns__container img:hover {
+    transform: scale(1.2);
   }
 `;

@@ -64,6 +64,11 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
     setCartProducts(newList);
   };
 
+  const removeItemFromWishList = (id: number) => {
+    const newList = wishListProducts.filter((item) => item.id !== id);
+    setWishListProducts(newList);
+  };
+
   const addItemQuantity = (id: number) => {
     if (cartProducts.length > 0) {
       const foundItem = cartProducts.find((item) => item.id === id);
@@ -114,6 +119,7 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         wishListProducts,
         setWishListProducts,
         handleAddItemToWishList,
+        removeItemFromWishList,
       }}
     >
       {children}
