@@ -13,6 +13,7 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
   const { products } = useContext(AuthProductsContext);
   const [cartModal, setCartModal] = useState(false);
   const [cartProducts, setCartProducts] = useState<ICartProducts[]>([]);
+  const [wishListModal, setWishListModal] = useState(false);
 
   const handleAddItemToCart = (id: number) => {
     const productExists = cartProducts.find((item) => item.id === id);
@@ -94,6 +95,8 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         removeItemFromCart,
         addItemQuantity,
         removeItemQuantity,
+        wishListModal,
+        setWishListModal,
       }}
     >
       {children}

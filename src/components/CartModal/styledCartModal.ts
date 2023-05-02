@@ -14,9 +14,6 @@ export const StyledCartModal = styled.div`
   color: white;
   z-index: 1;
 
-  .cartModal__container::-webkit-scrollbar {
-  }
-
   .cartModal__container {
     animation: ${AnimationFadeIn} 0.7s;
     background-color: white;
