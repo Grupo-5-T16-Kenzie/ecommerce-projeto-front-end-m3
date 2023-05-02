@@ -121,8 +121,6 @@ export const StyledCartModal = styled.div`
 
   header {
     background-color: black;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: space-between;
     padding: 20px 15px;

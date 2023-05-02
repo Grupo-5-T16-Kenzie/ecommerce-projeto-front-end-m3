@@ -19,6 +19,7 @@ export interface ICartContext {
   setCartModal: React.Dispatch<React.SetStateAction<boolean>>;
   cartProducts: ICartProducts[];
   setCartProducts: React.Dispatch<React.SetStateAction<ICartProducts[]>>;
+  handleAddItemToCart: (id: number) => void;
 }
 
 export interface IProduct {
