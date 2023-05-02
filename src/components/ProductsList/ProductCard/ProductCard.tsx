@@ -4,7 +4,8 @@ import { StyledProductcard } from "./styles";
 import { CartContext } from "../../../providers/CartContext";
 
 export const ProductCard = ({ product }: IProductCardProps) => {
-  const { handleAddItemToCart } = useContext(CartContext);
+  const { handleAddItemToCart, handleAddItemToWishList } =
+    useContext(CartContext);
 
   return (
     <StyledProductcard>
@@ -15,6 +16,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
           alt={product.name}
         />
         <img
+          onClick={() => handleAddItemToWishList(product.id)}
           className="product__imgLike__card"
           src="./src/assets/like.png"
           alt="like"

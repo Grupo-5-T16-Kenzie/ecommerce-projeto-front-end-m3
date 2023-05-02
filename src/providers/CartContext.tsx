@@ -3,6 +3,7 @@ import {
   ICartContext,
   ICartProducts,
   ICartProviderProps,
+  IProduct,
 } from "../Interfaces/Interfaces";
 import { AuthProductsContext } from "./productsContext";
 import { toast } from "react-toastify";
@@ -14,6 +15,7 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
   const [cartModal, setCartModal] = useState(false);
   const [cartProducts, setCartProducts] = useState<ICartProducts[]>([]);
   const [wishListModal, setWishListModal] = useState(false);
+  const [wishListProducts, setWishListProducts] = useState<IProduct[]>([]);
 
   const handleAddItemToCart = (id: number) => {
     const productExists = cartProducts.find((item) => item.id === id);
@@ -42,6 +44,18 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         productWithQuantity,
       ] as ICartProducts[]);
       toast.success("Item adicionado ao carrinho");
+    }
+  };
+
+  const handleAddItemToWishList = (id: number) => {
+    const productExists = wishListProducts.find((item) => item.id === id);
+
+    if (productExists) {
+      toast.error("O item já foi adicionado a lista de favoritos!");
+    } else {
+      const foundProduct = products.find((product) => product.id === id);
+      setWishListProducts([...wishListProducts, foundProduct] as IProduct[]);
+      toast.success("Item adicionado aos favoritos!");
     }
   };
 
@@ -97,6 +111,9 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         removeItemQuantity,
         wishListModal,
         setWishListModal,
+        wishListProducts,
+        setWishListProducts,
+        handleAddItemToWishList,
       }}
     >
       {children}
