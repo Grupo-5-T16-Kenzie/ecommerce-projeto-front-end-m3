@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { StyledHeader } from "./styles";
 import { CartContext } from "../../providers/CartContext";
+import LogoNoBackGround from "../../assets/CARTOLA-removebg-preview.png";
 
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);
@@ -10,7 +11,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <div className="header__logo">
-        <img src="./src/assets/logo.png" alt="Logomarca Epic Style" />
+        <img src={LogoNoBackGround} alt="Logomarca Epic Style" />
         <h1>EPIC STYLE</h1>
       </div>
       {!token ? (

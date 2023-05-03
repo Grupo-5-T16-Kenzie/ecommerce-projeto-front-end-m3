@@ -17,7 +17,12 @@ export const WishListModal = () => {
       <div className="wishList__container">
         <header>
           <h3>Lista de favoritos</h3>
-          <button onClick={() => setWishListModal(false)}>&#10005;</button>
+          <button
+            className="close__wishList"
+            onClick={() => setWishListModal(false)}
+          >
+            &#10005;
+          </button>
         </header>
 
         {wishListProducts.length <= 0 ? (
