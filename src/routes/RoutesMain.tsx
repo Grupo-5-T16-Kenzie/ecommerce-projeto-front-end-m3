@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import { DashboardPage } from "../pages/DashboardPage/DashboardPage";
+import { HomePage } from "../pages/Home/HomePage";
 
 export const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<h1>Página inicial</h1>} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<h1>Login</h1>} />
       <Route path="/register" element={<h1>Register</h1>} />
       <Route path="/dashboard" element={<DashboardPage />} />
