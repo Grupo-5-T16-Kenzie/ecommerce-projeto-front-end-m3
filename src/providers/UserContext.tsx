@@ -11,6 +11,7 @@ interface IUserProviderProps {
 interface IUserContext {
   userLogin: (formData: ILoginFormData) => Promise<void>;
   userRegister: (formData: IRegisterFormData) => Promise<void>;
+  userLogout: () => void;
 }
 interface IUser {
   name: string;
@@ -40,6 +41,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     try {
       const { data } = await api.post<IUserLoginResponse>("/login", formData);
       localStorage.setItem("@epicStyle:token", data.accessToken);
+      localStorage.setItem("@epicStyle:id", String(data.user.id));
       setUser(data.user);
       toast.success("Login efetuado com sucesso!", {
         onClose: () => {
@@ -66,11 +68,19 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
+  const userLogout = () => {
+    localStorage.removeItem("@epicStyle:token");
+    localStorage.removeItem("@epicStyle:id");
+    setUser(null);
+    navigate("/")
+  };
+
   return (
     <UserContext.Provider
       value={{
         userLogin,
         userRegister,
+        userLogout,
       }}
     >
       {children}
