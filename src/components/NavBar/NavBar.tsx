@@ -4,33 +4,40 @@ import { IProductsContext } from "../../Interfaces/Interfaces";
 import { AuthProductsContext } from "../../providers/productsContext";
 
 export const NavBar = () => {
-    const { filterCategories } = useContext<IProductsContext>(AuthProductsContext);
-  
-    const handleCategorySelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      filterCategories(event.target.value);
-    };
+  const { filterCategories } =
+    useContext<IProductsContext>(AuthProductsContext);
 
-    const handleCategoryButtonChange = (selectedCategory: string) => {
-      filterCategories(selectedCategory);
-    }
-  
-    return (
-      
-      <StyledNavBar>
-        <select
-          id="category-select"
-          onChange={handleCategorySelectChange}
-        >
-          <option className="option-category" value="todos" >SELECIONE NOSSAS OPÇÕES</option>
-          <option className="option-category" value="Camisetas" >CAMISETAS</option>
-          <option className="option-category" value="Calças" >CALÇAS</option>
-          <option className="option-category" value="Acessórios">ACESSÓRIOS</option>
-          <option className="option-category" value="Jaquetas" >JAQUETAS</option>
-         </select>
-         <div 
-            id="buttons_categories"
-            >
-          <button
+  const handleCategorySelectChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    filterCategories(event.target.value);
+  };
+
+  const handleCategoryButtonChange = (selectedCategory: string) => {
+    filterCategories(selectedCategory);
+  };
+
+  return (
+    <StyledNavBar>
+      <select id="category-select" onChange={handleCategorySelectChange}>
+        <option className="option-category" value="todos">
+          SELECIONE NOSSAS OPÇÕES
+        </option>
+        <option className="option-category" value="Camisetas">
+          CAMISETAS
+        </option>
+        <option className="option-category" value="Calças">
+          CALÇAS
+        </option>
+        <option className="option-category" value="Acessórios">
+          ACESSÓRIOS
+        </option>
+        <option className="option-category" value="Jaquetas">
+          JAQUETAS
+        </option>
+      </select>
+      <div id="buttons_categories">
+        <button
           className="category-button"
           onClick={() => handleCategoryButtonChange("todos")}
           value="todos"
@@ -53,8 +60,8 @@ export const NavBar = () => {
         </button>
         <button
           className="category-button"
-          onClick={() => handleCategoryButtonChange("Acessorios")}
-          value="Acessorios"
+          onClick={() => handleCategoryButtonChange("Acessórios")}
+          value="Acessórios"
         >
           ACESSÓRIOS
         </button>
@@ -65,7 +72,7 @@ export const NavBar = () => {
         >
           JAQUETAS
         </button>
-         </div>
+      </div>
     </StyledNavBar>
-    )
-    }
+  );
+};

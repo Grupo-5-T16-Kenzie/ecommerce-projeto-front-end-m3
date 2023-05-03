@@ -48,12 +48,13 @@ export const StyledWishListModal = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px 0px;
+    padding: 30px 15px;
     gap: 10px;
   }
 
   .emptyWishList__container p {
     font-size: 1.375rem;
+    text-align: center;
   }
 
   .emptyWishList__container span {
