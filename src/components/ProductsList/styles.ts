@@ -17,8 +17,9 @@ export const StyledProductsList = styled.div`
 
   @media (min-width: 1023px) {
     margin: 0 auto;
-    max-height: 850px;
+    max-height: 810px;
     padding-inline: 70px;
+    padding-block: 20px;
 
     .products__list {
       width: 100%;
