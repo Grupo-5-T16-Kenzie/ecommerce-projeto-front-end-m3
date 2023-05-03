@@ -9,8 +9,8 @@ interface IUserProviderProps {
   children: React.ReactNode;
 }
 interface IUserContext {
-  userLogin: (formData: ILoginFormData) => Promise<void>;
-  userRegister: (formData: IRegisterFormData) => Promise<void>;
+  userLogin: (formData: ILoginFormData, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
+  userRegister: (formData: IRegisterFormData, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
   userLogout: () => void;
 }
 interface IUser {
@@ -62,8 +62,12 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     }
   }, []);
 
-  const userLogin = async (formData: ILoginFormData) => {
+  const userLogin = async (
+    formData: ILoginFormData,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
     try {
+      setLoading(true);
       const { data } = await api.post<IUserLoginResponse>("/login", formData);
       localStorage.setItem("@epicStyle:token", data.accessToken);
       localStorage.setItem("@epicStyle:id", String(data.user.id));
@@ -76,11 +80,17 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     } catch (error) {
       toast.error("Erro ao fazer login. Tente novamente.");
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const userRegister = async (formData: IRegisterFormData) => {
+  const userRegister = async (
+    formData: IRegisterFormData,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
     try {
+      setLoading(true);
       await api.post<IUserRegisterResponse>("/users", formData);
       toast.success("Conta criada com sucesso!", {
         onClose: () => {
@@ -90,6 +100,8 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     } catch (error) {
       toast.error("Erro ao criar conta. Tente novamente.");
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
