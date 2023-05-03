@@ -25,3 +25,4 @@ export const registerFormSchema = z
     message: "As senhas devem ser iguais",
     path: ["password_confirmation"],
   });
+ export type TRegisterFormValues = z.infer<typeof registerFormSchema>

@@ -1,16 +1,16 @@
 import React, { createContext, useEffect, useState } from "react";
 import { api } from "../services/api";
-import { IRegisterFormData } from "../components/RegisterForm/RegisterForm";
-import { ILoginFormData } from "../components/LoginForm/LoginForm";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { TRegisterFormValues } from "../components/RegisterForm/regiterFormSchema";
+import { TLoginFormValues } from "../components/LoginForm/loginFormSchema";
 
 interface IUserProviderProps {
   children: React.ReactNode;
 }
 interface IUserContext {
-  userLogin: (formData: ILoginFormData, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
-  userRegister: (formData: IRegisterFormData, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
+  userLogin: (formData: TLoginFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
+  userRegister: (formData: TRegisterFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
   userLogout: () => void;
 }
 interface IUser {
@@ -63,7 +63,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   }, []);
 
   const userLogin = async (
-    formData: ILoginFormData,
+    formData: TLoginFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
     try {
@@ -86,7 +86,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   };
 
   const userRegister = async (
-    formData: IRegisterFormData,
+    formData: TRegisterFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
     try {
