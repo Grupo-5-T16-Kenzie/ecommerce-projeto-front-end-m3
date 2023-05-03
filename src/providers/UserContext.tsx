@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 import { IRegisterFormData } from "../components/RegisterForm/RegisterForm";
 import { ILoginFormData } from "../components/LoginForm/LoginForm";
@@ -37,6 +37,31 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem("@epicStyle:token");
+    const userId = localStorage.getItem("@epicStyle:id");
+
+    const userAutoLogin = async () => {
+      try {
+        const { data } = await api.get<IUser>(`/users/${userId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUser(data);
+        navigate("/dashboard");
+      } catch (error) {
+        console.log(error);
+        localStorage.removeItem("@epicStyle:token");
+        localStorage.removeItem("@epicStyle:id");
+      }
+    };
+
+    if (token && userId) {
+      userAutoLogin();
+    }
+  }, []);
+
   const userLogin = async (formData: ILoginFormData) => {
     try {
       const { data } = await api.post<IUserLoginResponse>("/login", formData);
@@ -68,11 +93,12 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
+  //Adicionar no dashboard depois
   const userLogout = () => {
     localStorage.removeItem("@epicStyle:token");
     localStorage.removeItem("@epicStyle:id");
     setUser(null);
-    navigate("/")
+    navigate("/");
   };
 
   return (
