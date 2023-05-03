@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledProductcard = styled.li`
 display: flex;
 flex-direction: column;
-align-items: flex-start;
+align-items: center;
 justify-content: center;
 border: 1px solid #000000;
 min-height: max-content;
@@ -41,6 +41,7 @@ width: 17rem;
     font-weight: 700;
     line-height: 24px;
     min-height: 3rem;
+    margin-top: 1rem;
 }
 
 .product__divCategoryPrice__card{
@@ -70,6 +71,7 @@ width: 17rem;
     color: #FFFFFF;
     margin-bottom: 1rem;
 }
+
 
 @media(min-width:1023px){
     width: 18.75rem;

@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.header`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 min-height: 6.25rem;
-max-width: 100vw;
 gap: 0.625rem;
 box-shadow: 0px 4px 4px 0px #00000040;
-
+padding: 0 1rem;    
 
 .header__logo{
     display: flex;
@@ -30,10 +29,11 @@ box-shadow: 0px 4px 4px 0px #00000040;
     align-items: center;
     min-height: 50px;
     justify-content: space-between;
+    width: 100%;
 }
 
 .header__button__signIn{
-    width: 22.36px;
+    width: 22px;
     height: 20px;
 }
 
@@ -73,7 +73,7 @@ button{
 .header__menu__left{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: left;
     gap: 0.625rem
 }
 
@@ -81,20 +81,23 @@ button{
     flex-direction: row;
     justify-content: space-between;
     padding: 0 9rem;
+    
+    
+    .header__logo{
+        justify-content: left;
+    }
+    
+    .header__menu{
+        justify-content: right;
+        gap: 2rem;
+    }
+    
+    .header__button__signIn, .header__button__cart, .header__button__wishes, .header__button__userProfile{
+        width: 35px;
+        height: 35px;
+    }
+
 }
 
-.header__logo{
-    justify-content: left;
-}
-
-.header__menu{
-    justify-content: right;
-    gap: 2rem;
-}
-
-.header__button__signIn, .header__button__cart, .header__button__wishes, .header__button__userProfile{
-    width: 35px;
-    height: 35px;
-}
 
 `

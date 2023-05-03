@@ -20,17 +20,15 @@ export const NavBar = () => {
         <select
           id="category-select"
           onChange={handleCategorySelectChange}
-          // style={{ display: "none" }}
         >
           <option className="option-category" value="todos" >SELECIONE NOSSAS OPÇÕES</option>
-          <option className="option-category" value="camisetas" >CAMISETAS</option>
-          <option className="option-category" value="calças" >CALÇAS</option>
-          <option className="option-category" value="acessorios">ACESSÓRIOS</option>
-          <option className="option-category" value="jaquetas" >JAQUETAS</option>
+          <option className="option-category" value="Camisetas" >CAMISETAS</option>
+          <option className="option-category" value="Calças" >CALÇAS</option>
+          <option className="option-category" value="Acessórios">ACESSÓRIOS</option>
+          <option className="option-category" value="Jaquetas" >JAQUETAS</option>
          </select>
          <div 
             id="buttons_categories"
-            // style={{ display: "block" }}
             >
           <button
           className="category-button"
@@ -41,29 +39,29 @@ export const NavBar = () => {
         </button>
         <button
           className="category-button"
-          onClick={() => handleCategoryButtonChange("camisetas")}
-          value="camisetas"
+          onClick={() => handleCategoryButtonChange("Camisetas")}
+          value="Camisetas"
         >
           CAMISETAS
         </button>
         <button
           className="category-button"
-          onClick={() => handleCategoryButtonChange("calças")}
-          value="calças"
+          onClick={() => handleCategoryButtonChange("Calças")}
+          value="Calças"
         >
           CALÇAS
         </button>
         <button
           className="category-button"
-          onClick={() => handleCategoryButtonChange("acessorios")}
-          value="acessorios"
+          onClick={() => handleCategoryButtonChange("Acessorios")}
+          value="Acessorios"
         >
           ACESSÓRIOS
         </button>
         <button
           className="category-button"
-          onClick={() => handleCategoryButtonChange("jaquetas")}
-          value="jaquetas"
+          onClick={() => handleCategoryButtonChange("Jaquetas")}
+          value="Jaquetas"
         >
           JAQUETAS
         </button>
