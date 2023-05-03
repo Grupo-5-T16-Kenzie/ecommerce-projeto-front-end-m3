@@ -6,17 +6,23 @@ import { StyledDashboardPage } from "./StyleDashboard";
 import { CartContext } from "../../providers/CartContext";
 import { CartModal } from "../../components/CartModal/CartModal";
 import { WishListModal } from "../../components/WishListModal/WishListModal";
+import { PatchUserModal } from "../../components/PatchUserModal/PatchUserModal";
+import { PatchContext } from "../../providers/modalPatchContext";
 
 export const DashboardPage = () => {
   const { cartModal, wishListModal } = useContext(CartContext);
+  const { patchModal } = useContext(PatchContext);
 
   return (
     <StyledDashboardPage>
       {wishListModal && <WishListModal />}
+      {patchModal&&<PatchUserModal/>}
       {cartModal && <CartModal />}
       <Header />
       {NavBar()}
       <ProductsList />
+
+      
     </StyledDashboardPage>
   );
 };

@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { StyledHeader } from "./styles";
 import { CartContext } from "../../providers/CartContext";
 import LogoNoBackGround from "../../assets/CARTOLA-removebg-preview.png";
+import { PatchContext } from "../../providers/modalPatchContext";
 
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);
+  const { setPatchModal} = useContext(PatchContext);
 
   const token = localStorage.getItem("@epicStyle:token") || "";
 
@@ -17,7 +19,7 @@ export const Header = () => {
       {!token ? (
         <div className="header__menu">
           <div className="header__menu__left">
-            <button className="header__button__userProfile">
+            <button className="header__button__userProfile"  onClick={()=>setPatchModal(true) }>
               <img src="./src/assets/user.png" alt="Perfil do usuário" />
             </button>
             <button
