@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
@@ -9,6 +10,8 @@ min-height: 6.25rem;
 max-width: 100vw;
 gap: 0.625rem;
 box-shadow: 0px 4px 4px 0px #00000040;
+background-color: var(--color-primary);
+color: var(--color-secondary);
 
 
 .header__logo{
@@ -65,8 +68,8 @@ button{
     justify-content: space-between;
     width: 8rem;
     height: 2.5rem;
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     font-size: 20px;
     font-weight: 500;
     line-height: 24px;
