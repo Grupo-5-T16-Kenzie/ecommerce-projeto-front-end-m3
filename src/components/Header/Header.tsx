@@ -1,9 +1,12 @@
-import { StyledHeader } from "./styles"
+import { useContext } from "react";
+import { StyledHeader } from "./styles";
+import { CartContext } from "../../providers/CartContext";
 
 export const Header = () => {
+  const { setCartModal, setWishListModal } = useContext(CartContext);
+  const token = localStorage.getItem("@token");
 
     const token = localStorage.getItem('@epicStyle:token')
-
 
     return(
         <StyledHeader>
@@ -54,3 +57,5 @@ export const Header = () => {
         </StyledHeader>
     )
 }
+
+ 
