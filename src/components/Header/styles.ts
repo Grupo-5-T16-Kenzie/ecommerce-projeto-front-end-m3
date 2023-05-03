@@ -7,9 +7,10 @@ export const StyledHeader = styled.header`
   align-items: center;
   min-height: 6.25rem;
   gap: 0.625rem;
-  box-shadow: 0px 4px 4px 0px #00000040;
   padding: 0 1rem;
   font-family: "Montserrat", sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 
   .header__logo {
     display: flex;
@@ -41,19 +42,12 @@ export const StyledHeader = styled.header`
     width: 100%;
   }
 
+  .header__button__cart,
+  .header__button__wishes,
+  .header__button__userProfile,
   .header__button__signIn {
-    width: 22px;
-    height: 20px;
-  }
-
-  .header__button__cart {
     width: 37px;
     height: 32px;
-  }
-
-  .header__button__wishes {
-    width: 34.5px;
-    height: 30px;
   }
 
   .header__button__cart:hover,
@@ -67,11 +61,6 @@ export const StyledHeader = styled.header`
     transform: scale(1.05);
   }
 
-  .header__button__userProfile {
-    width: 31.67px;
-    height: 28.33px;
-  }
-
   button {
     background: transparent;
     border: none;
@@ -82,14 +71,16 @@ export const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 8rem;
+    width: max-content;
     height: 2.5rem;
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: var(--font-size-4);
     font-weight: 500;
     line-height: 24px;
-    border-radius: 5px;
+    border: none;
+    padding: 0.5rem;
+    gap: 0.5rem;
   }
 
   .header__menu__left {
@@ -112,6 +103,20 @@ export const StyledHeader = styled.header`
       justify-content: right;
       padding-bottom: 0px;
       gap: 2rem;
+      padding-inline: none;
+    }
+
+    .header__menu__left,
+    .header__menu__right {
+      width: max-content;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header__button__login {
+      border: 1px solid var(--color-secondary);
+      border-radius: var(--radius-default);
+      width: 9rem;
     }
 
     .header__button__signIn,

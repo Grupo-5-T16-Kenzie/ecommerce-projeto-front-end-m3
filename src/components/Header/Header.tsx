@@ -18,19 +18,19 @@ export const Header = () => {
         <div className="header__menu">
           <div className="header__menu__left">
             <button className="header__button__userProfile">
-              <img src="./src/assets/user.png" alt="Perfil do usuário" />
+              <img src="./src/assets/header/png/user.png" alt="Perfil do usuário" />
             </button>
             <button
               onClick={() => setCartModal(true)}
               className="header__button__cart"
             >
-              <img src="./src/assets/cart.png" alt="Carrinho de compras" />
+              <img src="./src/assets/header/png/cart.png" alt="Carrinho de compras" />
             </button>
             <button
               onClick={() => setWishListModal(true)}
               className="header__button__wishes"
             >
-              <img src="./src/assets/wishes.png" alt="Lista de desejos" />
+              <img src="./src/assets/header/png/wishes.png" alt="Lista de desejos" />
             </button>
           </div>
           <div className="header__menu__right">
@@ -38,7 +38,7 @@ export const Header = () => {
               Entrar
               <img
                 className="header__button__signIn"
-                src="./src/assets/signIn.png"
+                src="./src/assets/header/png/enter.png"
                 alt="Entrar"
               />
             </button>

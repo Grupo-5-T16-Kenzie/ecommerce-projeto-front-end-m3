@@ -6,19 +6,18 @@ export const StyledNavBar = styled.div`
   justify-content: center;
   height: 75px;
   width: 100%;
-  font-family: "Montserrat", sans-serif;
 
   #category-select {
     display: block;
-    font-size: 16px;
+    font-size: var(--font-size-6);
     padding: 10px;
     font-weight: 500;
     line-height: 20px;
-    border-radius: 5px;
+    border-radius: var(--radius-default);
     width: 100%;
     height: 3.5rem;
-    background-color: #000000;
-    color: #ffffff;
+    background-color:var(--color-primary);
+    color: var(--color-secondary);
     margin: 1.875rem 1rem;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -48,12 +47,12 @@ export const StyledNavBar = styled.div`
   .category-button {
     border: none;
     padding: 10px 20px;
-    font-size: 1.125rem;
-    border-radius: 5px;
+    font-size: var(--font-size-5);
+    border-radius: var(--radius-default);
     cursor: pointer;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    background-color: #000000;
-    color: #ffffff;
+    box-shadow: var(--shadow);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
   }
 
   .category-button:hover {
