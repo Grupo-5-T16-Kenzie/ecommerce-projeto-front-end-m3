@@ -2,7 +2,7 @@ import { StyledHeader } from "./styles"
 
 export const Header = () => {
 
-    const token = localStorage.getItem('@token')
+    const token = localStorage.getItem('@epicStyle:token')
 
 
     return(

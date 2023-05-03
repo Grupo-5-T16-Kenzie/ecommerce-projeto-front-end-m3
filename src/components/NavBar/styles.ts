@@ -4,8 +4,8 @@ export const StyledNavBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100vw;
   height: 75px;
+  width: 100%;
 
   #category-select {
     display: block;
@@ -13,7 +13,6 @@ export const StyledNavBar = styled.div`
     padding: 10px;
     font-weight: 500;
     line-height: 20px;
-    margin-right: 10px;
     width: 100%;
     height: 3.5rem;
     background-color: #000000;
