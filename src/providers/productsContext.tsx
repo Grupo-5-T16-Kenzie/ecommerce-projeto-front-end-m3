@@ -30,7 +30,6 @@ export const AuthProductsProvider = ({ children }: IProductsProviderProps) => {
   }, []);
 
   const filterCategories = (selectedCategory: string) => {
-    console.log("Selected category: ", selectedCategory);
     setCategory(selectedCategory);
   };
 
