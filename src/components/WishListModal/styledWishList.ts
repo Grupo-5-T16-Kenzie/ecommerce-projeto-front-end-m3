@@ -13,6 +13,7 @@ export const StyledWishListModal = styled.div`
   position: absolute;
   color: white;
   z-index: 1;
+  font-family: "Montserrat", sans-serif;
 
   .wishList__container {
     animation: ${AnimationFadeIn} 0.7s;
@@ -40,6 +41,11 @@ export const StyledWishListModal = styled.div`
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
       drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
     border-radius: 2px 2px 0 0;
+  }
+
+  .close__wishList:hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 
   .emptyWishList__container {

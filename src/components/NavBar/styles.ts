@@ -6,6 +6,7 @@ export const StyledNavBar = styled.div`
   justify-content: center;
   height: 75px;
   width: 100%;
+  font-family: "Montserrat", sans-serif;
 
   #category-select {
     display: block;
@@ -13,10 +14,11 @@ export const StyledNavBar = styled.div`
     padding: 10px;
     font-weight: 500;
     line-height: 20px;
+    border-radius: 5px;
     width: 100%;
     height: 3.5rem;
     background-color: #000000;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 1.875rem 1rem;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -46,8 +48,15 @@ export const StyledNavBar = styled.div`
   .category-button {
     border: none;
     padding: 10px 20px;
+    font-size: 1.125rem;
+    border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0px 4px 4px 0px #00000040;
     background-color: #000000;
     color: #ffffff;
+  }
+
+  .category-button:hover {
+    transform: scale(1.05);
   }
 `;
