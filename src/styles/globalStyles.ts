@@ -30,10 +30,10 @@ export const GlobalStyles = createGlobalStyle`
     --font-size-5: 22px;
     --font-size-6: 20px;
     --font-size-7: 18px;
-    --font-size-7: 16px;
-    --font-size-7: 14px;
-    --font-size-7: 12px;
-    --font-size-7: 11px;
-    --font-size-7: 10px;
+    --font-size-8: 16px;
+    --font-size-9: 14px;
+    --font-size-10: 12px;
+    --font-size-11: 11px;
+    --font-size-12: 10px;
 }
 `
