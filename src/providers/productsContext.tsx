@@ -6,7 +6,7 @@ import {
 } from "../Interfaces/Interfaces";
 import { api } from "../services/api";
 
-export const AuthProductsContext = createContext({} as IProductsContext);
+export const ProductsContext = createContext({} as IProductsContext);
 
 export const AuthProductsProvider = ({ children }: IProductsProviderProps) => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -33,11 +33,16 @@ export const AuthProductsProvider = ({ children }: IProductsProviderProps) => {
     setCategory(selectedCategory);
   };
 
+  const redirectToLogin = () => {
+    window.location.replace('/login')
+  }
+
+
   return (
-    <AuthProductsContext.Provider
-      value={{ products, setProducts, category, setCategory, filterCategories }}
+    <ProductsContext.Provider
+      value={{ products, setProducts, category, setCategory, filterCategories, redirectToLogin }}
     >
       {children}
-    </AuthProductsContext.Provider>
+    </ProductsContext.Provider>
   );
 };

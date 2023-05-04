@@ -8,7 +8,6 @@ export const StyledProductcard = styled.li`
   border: 1px solid #000000;
   min-height: max-content;
   width: 17rem;
-  font-family: "Montserrat", sans-serif;
 
   .product__divImg__card {
     width: 100%;
@@ -73,11 +72,11 @@ export const StyledProductcard = styled.li`
   .product__button__addToCart {
     width: 100%;
     height: 3rem;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     margin-bottom: 1rem;
     font-family: "Montserrat", sans-serif;
-    box-shadow: 0px 4px 4px 0px #00000040;
+    box-shadow: var(--shadow);
   }
 
   .product__button__addToCart:hover {
@@ -87,14 +86,18 @@ export const StyledProductcard = styled.li`
 
   @media (min-width: 1023px) {
     width: 18.75rem;
-  }
 
-  .product__divImg__card {
-    width: 100%;
-  }
+    .product__divImg__card {
+      width: 100%;
+    }
 
-  .product__img__card {
-    width: 100%;
-    height: 10.625rem;
+    .product__img__card {
+      width: 100%;
+      height: 10.625rem;
+    }
+
+    .product__imgLike__card {
+      left: 16rem;
+    }
   }
 `;
