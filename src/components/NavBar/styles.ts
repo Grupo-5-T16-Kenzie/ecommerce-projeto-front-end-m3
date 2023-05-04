@@ -16,7 +16,7 @@ export const StyledNavBar = styled.div`
     border-radius: var(--radius-default);
     width: 100%;
     height: 3.5rem;
-    background-color:var(--color-primary);
+    background-color: var(--color-primary);
     color: var(--color-secondary);
     margin: 1.875rem 1rem;
     -webkit-appearance: none;
@@ -35,9 +35,10 @@ export const StyledNavBar = styled.div`
   #buttons_categories {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     padding: 0 9rem;
+    max-width: 1000px;
 
     @media (max-width: 1022px) {
       display: none;

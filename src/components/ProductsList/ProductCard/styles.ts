@@ -6,6 +6,7 @@ export const StyledProductcard = styled.li`
   align-items: center;
   justify-content: center;
   border: 1px solid #000000;
+  border-radius: 3px;
   min-height: max-content;
   width: 17rem;
 
@@ -77,6 +78,8 @@ export const StyledProductcard = styled.li`
     margin-bottom: 1rem;
     font-family: "Montserrat", sans-serif;
     box-shadow: var(--shadow);
+    border: none;
+    border-radius: 5px;
   }
 
   .product__button__addToCart:hover {
