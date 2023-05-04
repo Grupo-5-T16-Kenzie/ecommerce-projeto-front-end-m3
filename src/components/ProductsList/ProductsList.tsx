@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { ProductCard } from "./ProductCard/ProductCard";
 import { IProductsContext } from "../../Interfaces/Interfaces";
-import { AuthProductsContext } from "../../providers/productsContext";
+import { ProductsContext } from "../../providers/ProductsContext";
 import { StyledProductsList } from "./styles";
 
 export const ProductsList = () => {
   const { products, category } =
-    useContext<IProductsContext>(AuthProductsContext);
+    useContext<IProductsContext>(ProductsContext);
 
   return (
     <StyledProductsList>

@@ -12,6 +12,7 @@ export interface IProductsContext {
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   filterCategories: (selectedCategory: string) => void;
+  redirectToLogin: () => void;
 }
 
 export interface ICartContext {

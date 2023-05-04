@@ -12,6 +12,7 @@ interface IUserContext {
   userLogin: (formData: TLoginFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
   userRegister: (formData: TRegisterFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
   userLogout: () => void;
+  user: IUser | null;
 }
 interface IUser {
   name: string;
@@ -119,6 +120,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         userLogin,
         userRegister,
         userLogout,
+        user,
       }}
     >
       {children}

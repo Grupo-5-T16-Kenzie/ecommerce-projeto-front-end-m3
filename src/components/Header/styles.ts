@@ -90,6 +90,28 @@ export const StyledHeader = styled.header`
     gap: 0.625rem;
   }
 
+  .header__button__userProfile{
+    height: auto;
+  }
+  
+  .header__button__leave{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secondary);
+    height: 38px;
+    padding: 0.35rem;
+    border-radius: var(--radius-default);
+    margin-top: 0.rem;
+  }
+
+  .header__menu__right{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 1.3rem;
+  }
+
   @media (min-width: 1023px) {
     flex-direction: row;
     justify-content: space-between;
@@ -126,5 +148,7 @@ export const StyledHeader = styled.header`
       width: 35px;
       height: 35px;
     }
+    
+
   }
 `;
