@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { StyledNavBar } from "./styles";
 import { IProductsContext } from "../../Interfaces/Interfaces";
-import { AuthProductsContext } from "../../providers/productsContext";
+import { ProductsContext } from "../../providers/ProductsContext";
 
 export const NavBar = () => {
   const { filterCategories } =
-    useContext<IProductsContext>(AuthProductsContext);
+    useContext<IProductsContext>(ProductsContext);
 
   const handleCategorySelectChange = (
     event: React.ChangeEvent<HTMLSelectElement>

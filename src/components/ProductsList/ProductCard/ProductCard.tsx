@@ -18,7 +18,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
         <img
           onClick={() => handleAddItemToWishList(product.id)}
           className="product__imgLike__card"
-          src="./src/assets/like.png"
+          src="./src/assets/header/png/wishes.png"
           alt="like"
         />
       </div>

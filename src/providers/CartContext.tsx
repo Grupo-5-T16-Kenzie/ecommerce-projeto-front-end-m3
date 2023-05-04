@@ -5,13 +5,13 @@ import {
   ICartProviderProps,
   IProduct,
 } from "../Interfaces/Interfaces";
-import { AuthProductsContext } from "./productsContext";
+import { ProductsContext } from "./ProductsContext";
 import { toast } from "react-toastify";
 
 export const CartContext = createContext({} as ICartContext);
 
 export const CartProvider = ({ children }: ICartProviderProps) => {
-  const { products } = useContext(AuthProductsContext);
+  const { products } = useContext(ProductsContext);
   const [cartModal, setCartModal] = useState(false);
   const [cartProducts, setCartProducts] = useState<ICartProducts[]>([]);
   const [wishListModal, setWishListModal] = useState(false);
