@@ -11,9 +11,9 @@ import { StyledHeaderNew } from "./styledHeader";
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);
   const { redirectToLogin } = useContext(ProductsContext);
-  const { userLogout } = useContext(UserContext);
+  const { userLogout, setPatchModal } = useContext(UserContext);
 
-  const user = "Hello"; //criado para aguardar o contexto do usuario ser tipado e finalziado
+  const user = "teste";
 
   return (
     <>
@@ -24,9 +24,6 @@ export const Header = () => {
               <h1>EPIC STYLE</h1>
             </div>
             <div className="header--right__container">
-              <button className="header--button__userProfile">
-                <img src={UserProfileIcon} alt="Perfil do usuário" />
-              </button>
               <button
                 onClick={() => setCartModal(true)}
                 className="header--button__cart"
@@ -60,7 +57,10 @@ export const Header = () => {
               <h1>EPIC STYLE</h1>
             </div>
             <div className="header--right__container">
-              <button className="header--button__userProfile">
+              <button
+                onClick={() => setPatchModal(true)}
+                className="header--button__userProfile"
+              >
                 <img src={UserProfileIcon} alt="Perfil do usuário" />
               </button>
               <button

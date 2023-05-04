@@ -33,7 +33,7 @@ export const StyledHomePage = styled.div`
 
     img {
       filter: drop-shadow(10px 10px 4px rgb(0, 0, 0, 0.2));
-      max-height: 400px;
+      max-height: 250px;
     }
   }
 
@@ -47,7 +47,7 @@ export const StyledHomePage = styled.div`
       text-decoration: none;
       color: white;
       background-color: black;
-      padding: 18px 33px;
+      padding: 12px 30px;
       border-radius: 5px;
       text-transform: uppercase;
       text-align: center;
