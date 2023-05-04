@@ -42,6 +42,12 @@ export const StyledProductsList = styled.div`
     }
   }
 
+  @media (min-height: 1025px) {
+    .products__list {
+      max-height: 730px;
+    }
+  }
+
   @media (min-width: 1140px) {
     .products__list {
       column-gap: 60px;
