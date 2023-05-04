@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledInput = styled.div`
   width: 288px;
-  height: 80px;
+  height: 95px;
 
   display: flex;
   flex-direction: column;
@@ -26,7 +26,8 @@ export const StyledInput = styled.div`
   }
 
   p {
-    font-size: var(--font-size-6);
+    font-size: var(--font-size-7);
     color: var(--color-negative);
+    margin-bottom:5px;
   }
 `;

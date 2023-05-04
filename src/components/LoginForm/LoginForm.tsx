@@ -44,7 +44,7 @@ export const LoginForm = () => {
 
       />
 
-      <button type="submit" disabled={loading}>
+      <button className="button--login" type="submit" disabled={loading}>
         {loading ? "ENTRANDO..." : "ENTRAR"}
       </button>
     </form>
