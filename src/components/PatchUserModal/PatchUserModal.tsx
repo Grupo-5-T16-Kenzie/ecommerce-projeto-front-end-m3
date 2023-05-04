@@ -1,9 +1,8 @@
-import { Context, useContext } from "react";
+import { useContext } from "react";
 import { StyledPatchUserModal } from "./styledPatchUserModal"
 import { Input } from "../Input/Input";
 import { UserContext } from "../../providers/UserContext";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Schema } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TPatchFormValues, patchFormSchema } from "./patchFormSchema";
 
@@ -13,7 +12,6 @@ export const PatchUserModal = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<TPatchFormValues>({
     resolver: zodResolver(patchFormSchema),
   });
