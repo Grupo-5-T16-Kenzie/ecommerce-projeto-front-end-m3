@@ -34,13 +34,19 @@ export const AuthProductsProvider = ({ children }: IProductsProviderProps) => {
   };
 
   const redirectToLogin = () => {
-    window.location.replace('/login')
-  }
-
+    window.location.replace("/login");
+  };
 
   return (
     <ProductsContext.Provider
-      value={{ products, setProducts, category, setCategory, filterCategories, redirectToLogin }}
+      value={{
+        products,
+        setProducts,
+        category,
+        setCategory,
+        filterCategories,
+        redirectToLogin,
+      }}
     >
       {children}
     </ProductsContext.Provider>
