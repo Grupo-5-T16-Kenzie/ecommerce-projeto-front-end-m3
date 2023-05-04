@@ -53,7 +53,7 @@ export const StyledPatchUserModal = styled.div`
     cursor: pointer;
   }
 
-  .form{
+  form{
     background: #D9D9D9;
     padding:  27px;
     display: flex;

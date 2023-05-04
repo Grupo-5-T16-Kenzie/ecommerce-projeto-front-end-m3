@@ -8,6 +8,7 @@ import { CartProvider } from "./providers/CartContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {UserProvider } from "./providers/UserContext";
+import { GlobalStyles } from "./styles/globalStyles";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
