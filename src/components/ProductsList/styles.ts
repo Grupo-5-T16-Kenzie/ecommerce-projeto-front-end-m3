@@ -4,7 +4,6 @@ export const StyledProductsList = styled.div`
   overflow-x: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
 
   .products__list {
     display: flex;
@@ -22,6 +21,7 @@ export const StyledProductsList = styled.div`
     padding-inline: 70px;
     padding-block: 20px;
     column-gap: 10px;
+    justify-content: center;
 
     .products__list {
       max-height: 570px;
@@ -33,6 +33,12 @@ export const StyledProductsList = styled.div`
       overflow-y: auto;
       padding-inline: 50px;
       overflow-x: hidden;
+    }
+  }
+
+  @media (min-height: 928px) {
+    .products__list {
+      max-height: 660px;
     }
   }
 
