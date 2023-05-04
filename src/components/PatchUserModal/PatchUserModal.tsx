@@ -2,6 +2,7 @@ import { Context, useContext } from "react";
 import { IPachUserContext } from "../../Interfaces/Interfaces";
 import { PatchContext } from "../../providers/modalPatchContext";
 import { StyledPatchUserModal } from "./styledPatchUserModal"
+import { Input } from "../Input/Input";
 
 
 export const PatchUserModal = () => {
@@ -16,6 +17,9 @@ return(
           <button onClick={() =>setPatchModal(false)}>&#10005;</button>
         </header>
    
+           
+            <Input type='text' placeholder='Email' />
+
          <div className="form">
         <p>Nome</p>
         <input type="text"  />
