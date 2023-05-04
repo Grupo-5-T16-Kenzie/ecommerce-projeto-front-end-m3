@@ -8,6 +8,7 @@ import { CartProvider } from "./providers/CartContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalStyles } from "./styles/globalStyles";
+import {UserProvider } from "./providers/UserContext";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -15,11 +16,14 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <ResetStyle />
       <GlobalStyles />
       <ToastContainer position="bottom-left" autoClose={2100} theme="dark" />
-      <AuthProductsProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </AuthProductsProvider>
+
+      <UserProvider>
+        <AuthProductsProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </AuthProductsProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
