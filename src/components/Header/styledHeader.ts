@@ -73,7 +73,8 @@ export const StyledHeaderNew = styled.div`
 
     .header--button__cart:hover,
     .header--button__wishes:hover,
-    .header--button__userProfile:hover {
+    .header--button__userProfile:hover,
+    .header--button__leave:hover {
       transform: scale(1.12);
       cursor: pointer;
     }

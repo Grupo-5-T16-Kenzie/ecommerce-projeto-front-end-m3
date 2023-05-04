@@ -39,6 +39,7 @@ export const StyledProductcard = styled.li`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 90%;
     padding: 0.5rem 1rem;
   }
 
@@ -71,7 +72,7 @@ export const StyledProductcard = styled.li`
   }
 
   .product__button__addToCart {
-    width: 100%;
+    min-width: 85%;
     height: 3rem;
     background-color: var(--color-primary);
     color: var(--color-secondary);

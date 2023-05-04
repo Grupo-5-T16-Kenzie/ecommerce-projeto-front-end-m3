@@ -9,6 +9,7 @@ export const StyledHomePage = styled.div`
   align-items: center;
   justify-content: center;
   font-family: "Montserrat", sans-serif;
+  padding-bottom: 100px;
 
   .logo__container {
     display: flex;

@@ -11,9 +11,7 @@ import { StyledHeaderNew } from "./styledHeader";
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);
   const { redirectToLogin } = useContext(ProductsContext);
-  const { userLogout, setPatchModal } = useContext(UserContext);
-
-  const user = "teste";
+  const { userLogout, setPatchModal, user } = useContext(UserContext);
 
   return (
     <>
