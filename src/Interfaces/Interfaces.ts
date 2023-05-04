@@ -6,6 +6,12 @@ export interface ICartProviderProps {
   children: React.ReactNode;
 }
 
+export interface IModalPatchProps {
+  children: React.ReactNode;
+}
+
+
+
 export interface IProductsContext {
   products: IProduct[];
   setProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
@@ -14,6 +20,12 @@ export interface IProductsContext {
   filterCategories: (selectedCategory: string) => void;
   redirectToLogin: () => void;
 }
+
+export interface IPachUserContext{
+  patchModal: boolean,
+  setPatchModal: React.Dispatch<React.SetStateAction<boolean>>
+}
+
 
 export interface ICartContext {
   cartModal: boolean;

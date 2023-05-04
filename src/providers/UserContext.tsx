@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { TRegisterFormValues } from "../components/RegisterForm/regiterFormSchema";
 import { TLoginFormValues } from "../components/LoginForm/loginFormSchema";
+import { TPatchFormValues } from "../components/PatchUserModal/patchFormSchema";
 
 interface IUserProviderProps {
   children: React.ReactNode;
@@ -11,8 +12,10 @@ interface IUserProviderProps {
 interface IUserContext {
   userLogin: (formData: TLoginFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
   userRegister: (formData: TRegisterFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
+  patchUser: (formData: TPatchFormValues) => Promise<void>
   userLogout: () => void;
-  user: IUser | null;
+  patchModal: boolean;
+  setPatchModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 interface IUser {
   name: string;
@@ -35,6 +38,8 @@ export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserProviderProps) => {
   const [user, setUser] = useState<IUser | null>(null);
+  const [patchModal, setPatchModal] = useState(true);
+
 
   const navigate = useNavigate();
 
@@ -86,6 +91,25 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
+  const patchUser = async (
+    formData: TPatchFormValues
+  ) =>{
+    const userId = localStorage.getItem("@epicStyle:id");
+    const token = localStorage.getItem("@epicStyle:token");
+    try {
+     await api.patch(`/users/${userId}`,formData,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      toast.success("Atualizado com sucesso")
+    }catch (error) {
+      toast.error("Erro. Tente novamente.");
+      console.log(error);
+    }
+  }
+
+
   const userRegister = async (
     formData: TRegisterFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
@@ -119,8 +143,8 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       value={{
         userLogin,
         userRegister,
-        userLogout,
-        user,
+        userLogout,patchModal,setPatchModal,patchUser
+        
       }}
     >
       {children}

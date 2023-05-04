@@ -6,9 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthProductsProvider } from "./providers/ProductsContext";
 import { CartProvider } from "./providers/CartContext";
 import { ToastContainer } from "react-toastify";
-import { GlobalStyles } from "./styles/globalStyles";
-import {UserProvider } from "./providers/UserContext";
 import "react-toastify/dist/ReactToastify.css";
+import {UserProvider } from "./providers/UserContext";
+import { GlobalStyles } from "./styles/globalStyles";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -16,13 +16,12 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <ResetStyle />
       <GlobalStyles />
       <ToastContainer position="bottom-left" autoClose={2100} theme="dark" />
-
       <UserProvider>
-        <AuthProductsProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </AuthProductsProvider>
+      <AuthProductsProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </AuthProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
