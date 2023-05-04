@@ -1,12 +1,11 @@
 import { Context, useContext } from "react";
-import { IPachUserContext } from "../../Interfaces/Interfaces";
-import { PatchContext } from "../../providers/modalPatchContext";
 import { StyledPatchUserModal } from "./styledPatchUserModal"
 import { Input } from "../Input/Input";
+import { UserContext } from "../../providers/UserContext";
 
 
 export const PatchUserModal = () => {
-  const { setPatchModal} = useContext(PatchContext);
+  const { setPatchModal} = useContext(UserContext);
 
 return(
 

@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { StyledHeader } from "./styles";
 import { CartContext } from "../../providers/CartContext";
 import LogoNoBackGround from "../../assets/CARTOLA-removebg-preview.png";
-import { PatchContext } from "../../providers/modalPatchContext";
+import { UserContext } from "../../providers/UserContext";
 
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);
-  const { setPatchModal} = useContext(PatchContext);
+  const { setPatchModal} = useContext(UserContext);
 
   const token = localStorage.getItem("@epicStyle:token") || "";
 

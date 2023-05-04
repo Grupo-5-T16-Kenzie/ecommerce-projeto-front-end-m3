@@ -12,6 +12,8 @@ interface IUserContext {
   userLogin: (formData: TLoginFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
   userRegister: (formData: TRegisterFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
   userLogout: () => void;
+  setPatchModal: React.Dispatch<React.SetStateAction<boolean>>
+  patchModal: boolean
 }
 interface IUser {
   name: string;
@@ -34,6 +36,8 @@ export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserProviderProps) => {
   const [user, setUser] = useState<IUser | null>(null);
+  const [patchModal, setPatchModal] = useState(false);
+
 
   const navigate = useNavigate();
 
@@ -119,6 +123,8 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         userLogin,
         userRegister,
         userLogout,
+        setPatchModal,
+        patchModal
       }}
     >
       {children}
