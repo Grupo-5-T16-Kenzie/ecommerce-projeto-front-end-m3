@@ -1,7 +1,9 @@
-export const App = () => {
- 
-  return (
-    <h1>Projeto Final</h1>
-  )
-}
+import { RoutesMain } from "./routes/RoutesMain";
 
+export const App = () => {
+  return (
+    <>
+      <RoutesMain />
+    </>
+  );
+};
