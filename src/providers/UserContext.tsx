@@ -10,6 +10,7 @@ interface IUserProviderProps {
   children: React.ReactNode;
 }
 interface IUserContext {
+  user: IUser | null;
   userLogin: (
     formData: TLoginFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
@@ -149,6 +150,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         patchModal,
         setPatchModal,
         patchUser,
+        user,
       }}
     >
       {children}
