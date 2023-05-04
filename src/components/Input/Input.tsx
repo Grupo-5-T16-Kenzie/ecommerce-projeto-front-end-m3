@@ -1,5 +1,6 @@
 import { ForwardedRef, forwardRef, InputHTMLAttributes } from "react";
 import { FieldError } from "react-hook-form";
+import { StyledInput } from "./styledInput";
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
     label?: string;
@@ -7,9 +8,9 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
 } 
 
 export const Input = forwardRef(({label, error, ...rest}: IInputProps, ref: ForwardedRef<HTMLInputElement>) => (
-    <div>
+    <StyledInput>
         {label ? <label>{label}</label> : null}
         <input ref={ref} {...rest} />
         {error ? <p>{error.message}</p> : null}
-    </div>
+    </StyledInput>
 ))
