@@ -22,12 +22,34 @@ export const StyledInput = styled.div`
     font-size: var(--font-size-8);
     color: var(--color-grey-2);
     background-color: var(--color-grey-0);
-
   }
 
   p {
     font-size: var(--font-size-7);
     color: var(--color-negative);
-    margin-bottom:5px;
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: 1023px) {
+      width: 450px;
+    height: 130px;
+
+    label {
+      height: 30px;
+      font-size: var(--font-size-2);
+    }
+
+    input {
+      width: 440px;
+      height: 60px;
+      padding-left: 10px;
+     
+      font-size: var(--font-size-4);
+    }
+
+    p {
+      font-size: var(--font-size-4);
+      color: var(--color-negative);
+    }
   }
 `;

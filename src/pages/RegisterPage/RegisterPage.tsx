@@ -6,15 +6,19 @@ import { StyledRegisterPage } from "./styledRegisterPage";
 export const RegisterPage = () => {
   return (
     <StyledRegisterPage>
-      <div className="login-page__image">
-        <img src={CARTOLA} alt="A cartola do logo" />
-      </div>
-      <div className="register-page__form-container">
-        <div className="register-page__form-header">
-        <h1 className="login-page__title">Cadastro</h1>
-        <Link className="login-page__redirect"to="/login">ir para o login</Link>
+      <div className="register-page__container">
+        <div className="register-page__image">
+          <img src={CARTOLA} alt="A cartola do logo" />
         </div>
-        <RegisterForm />
+        <div className="register-page__form-container">
+          <div className="register-page__form-header">
+            <h1 className="register-page__title">Cadastro</h1>
+            <Link className="register-page__redirect" to="/login">
+              ir para o login
+            </Link>
+          </div>
+          <RegisterForm />
+        </div>
       </div>
     </StyledRegisterPage>
   );

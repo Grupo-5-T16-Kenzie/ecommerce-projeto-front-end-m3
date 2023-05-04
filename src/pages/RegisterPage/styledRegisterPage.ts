@@ -1,14 +1,24 @@
 import styled from "styled-components";
 
 export const StyledRegisterPage = styled.div`
+  min-height: 100vh;
+  height: 100%;
+
+  background-color: var(--color-secondary);
+  padding-bottom: 30px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
-  background-color: var(--color-secondary);
 
-  .login-page__image {
+  .register-page__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .register-page__image {
     margin-top: 30px;
     width: 104px;
     height: 146px;
@@ -35,12 +45,12 @@ export const StyledRegisterPage = styled.div`
       height: 30px;
       margin-bottom: 10px;
 
-      .login-page__title {
+      .register-page__title {
         font-size: var(--font-size-3);
         font-weight: bold;
       }
 
-      .login-page__redirect {
+      .register-page__redirect {
         font-size: var(--font-size-7);
         color: (--color-grey-2);
       }
@@ -62,6 +72,36 @@ export const StyledRegisterPage = styled.div`
     button:hover {
       transform: scale(1.01);
       background-color: #343433;
+    }
+  }
+
+  @media (min-width: 1023px) {
+    .register-page__container {
+      max-width: 900px;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      .register-page__image {
+        width: 300px;
+        height: 420px;
+      }
+      .register-page__form-header {
+        margin-bottom: 15px;
+        .register-page__title {
+          font-size: var(--font-size-1);
+        }
+        .register-page__redirect {
+          font-size: var(--font-size-5);
+        }
+      }
+
+      .register-page__form-container {
+        button {
+          width: 450px;
+          height: 60px;
+          font-size: var(--font-size-2);
+        }
+      }
     }
   }
 `;

@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
 export const StyledLoginPage = styled.div`
+  min-height: 100vh;
+  height: 100%;
+
+  background-color: var(--color-secondary);
+  padding-bottom: 30px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
-  background-color: var(--color-secondary);
+
+  .login-page__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   .button--login {
     background-color: var(--color-primary);
@@ -23,6 +34,10 @@ export const StyledLoginPage = styled.div`
     margin-top: 30px;
     width: 104px;
     height: 146px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img {
       width: 100%;
@@ -77,4 +92,42 @@ export const StyledLoginPage = styled.div`
     }
   }
 
+  @media (min-width: 1023px) {
+    .login-page__container {
+      max-width: 900px;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .login-page__image {
+      width: 300px;
+      height: 420px;
+    }
+
+    .login-page__form-container {
+      .login-page__title {
+        font-size: var(--font-size-1);
+        margin-bottom: 15px;
+      }
+
+      button {
+        width: 450px;
+        height: 60px;
+        font-size: var(--font-size-2);
+      }
+    }
+
+    .button--login {
+      margin: 10px 0;
+    }
+
+    .login-page__redirect {
+      height: 95px;
+      p {
+        font-size: var(--font-size-5);
+        color: var(--color-grey-2);
+      }
+    }
+  }
 `;
