@@ -1,3 +1,7 @@
+import { TLoginFormValues } from "../components/LoginForm/loginFormSchema";
+import { TPatchFormValues } from "../components/PatchUserModal/patchFormSchema";
+import { TRegisterFormValues } from "../components/RegisterForm/regiterFormSchema";
+
 export interface IProductsProviderProps {
   children: React.ReactNode;
 }
@@ -10,8 +14,6 @@ export interface IModalPatchProps {
   children: React.ReactNode;
 }
 
-
-
 export interface IProductsContext {
   products: IProduct[];
   setProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
@@ -21,11 +23,10 @@ export interface IProductsContext {
   redirectToLogin: () => void;
 }
 
-export interface IPachUserContext{
-  patchModal: boolean,
-  setPatchModal: React.Dispatch<React.SetStateAction<boolean>>
+export interface IPachUserContext {
+  patchModal: boolean;
+  setPatchModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
 
 export interface ICartContext {
   cartModal: boolean;
@@ -71,4 +72,40 @@ export interface IProductsList {
 
 export interface IHeader {
   token: string | null;
+}
+
+//UserContext
+export interface IUserProviderProps {
+  children: React.ReactNode;
+}
+export interface IUserContext {
+  user: IUser | null;
+  userLogin: (
+    formData: TLoginFormValues,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => Promise<void>;
+  userRegister: (
+    formData: TRegisterFormValues,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => Promise<void>;
+  patchUser: (formData: TPatchFormValues) => Promise<void>;
+  userLogout: () => void;
+  patchModal: boolean;
+  setPatchModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export interface IUser {
+  name: string;
+  image_url: string;
+  email: string;
+  id: number;
+  password_confirmation: string;
+}
+export interface IUserLoginResponse {
+  accessToken: string;
+  user: IUser;
+}
+
+export interface IUserRegisterResponse {
+  accessToken: string;
+  user: IUser;
 }
