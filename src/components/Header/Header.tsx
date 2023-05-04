@@ -1,75 +1,91 @@
 import { useContext } from "react";
-import { StyledHeader } from "./styles";
 import { CartContext } from "../../providers/CartContext";
-import LogoNoBackGround from "../../assets/CARTOLA-removebg-preview.png";
+import { ProductsContext } from "../../providers/ProductsContext";
+import { UserContext } from "../../providers/UserContext";
+import UserProfileIcon from "../../assets/header/png/user.png";
+import CartIcon from "../../assets/header/png/cart.png";
+import WishListIcon from "../../assets/header/png/wishes.png";
+import SignInIcon from "../../assets/header/png/enter.png";
+import { StyledHeaderNew } from "./styledHeader";
 
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);
+  const { redirectToLogin } = useContext(ProductsContext);
+  const { userLogout } = useContext(UserContext);
 
-  const token = localStorage.getItem("@epicStyle:token") || "";
+  const user = "Hello"; //criado para aguardar o contexto do usuario ser tipado e finalziado
 
   return (
-    <StyledHeader>
-      <div className="header__logo">
-        <img src={LogoNoBackGround} alt="Logomarca Epic Style" />
-        <h1>EPIC STYLE</h1>
-      </div>
-      {!token ? (
-        <div className="header__menu">
-          <div className="header__menu__left">
-            <button className="header__button__userProfile">
-              <img src="./src/assets/user.png" alt="Perfil do usuário" />
-            </button>
-            <button
-              onClick={() => setCartModal(true)}
-              className="header__button__cart"
-            >
-              <img src="./src/assets/cart.png" alt="Carrinho de compras" />
-            </button>
-            <button
-              onClick={() => setWishListModal(true)}
-              className="header__button__wishes"
-            >
-              <img src="./src/assets/wishes.png" alt="Lista de desejos" />
-            </button>
+    <>
+      {!user ? (
+        <StyledHeaderNew>
+          <div className="width__container">
+            <div className="header-left__container">
+              <h1>EPIC STYLE</h1>
+            </div>
+            <div className="header--right__container">
+              <button className="header--button__userProfile">
+                <img src={UserProfileIcon} alt="Perfil do usuário" />
+              </button>
+              <button
+                onClick={() => setCartModal(true)}
+                className="header--button__cart"
+              >
+                <img src={CartIcon} alt="Carrinho de compras" />
+              </button>
+              <button
+                onClick={() => setWishListModal(true)}
+                className="header--button__wishes"
+              >
+                <img src={WishListIcon} alt="Lista de desejos" />
+              </button>
+              <button
+                className="header--button__login"
+                onClick={() => redirectToLogin()}
+              >
+                Entrar
+                <img
+                  className="header--button__signIn"
+                  src={SignInIcon}
+                  alt="Entrar"
+                />
+              </button>
+            </div>
           </div>
-          <div className="header__menu__right">
-            <button className="header__button__login">
-              Entrar
-              <img
-                className="header__button__signIn"
-                src="./src/assets/signIn.png"
-                alt="Entrar"
-              />
-            </button>
-          </div>
-        </div>
+        </StyledHeaderNew>
       ) : (
-        <div className="header__menu">
-          <div className="header__menu__left">
-            <button
-              onClick={() => setCartModal(true)}
-              className="header__button__cart"
-            >
-              <img src="./src/assets/cart.png" alt="Carrinho de compras" />
-            </button>
-            <button
-              onClick={() => setWishListModal(true)}
-              className="header__button__wishes"
-            >
-              <img src="./src/assets/wishes.png" alt="Lista de desejos" />
-            </button>
+        <StyledHeaderNew>
+          <div className="width__container">
+            <div className="header-left__container">
+              <h1>EPIC STYLE</h1>
+            </div>
+            <div className="header--right__container">
+              <button className="header--button__userProfile">
+                <img src={UserProfileIcon} alt="Perfil do usuário" />
+              </button>
+              <button
+                onClick={() => setCartModal(true)}
+                className="header--button__cart"
+              >
+                <img src={CartIcon} alt="Carrinho de compras" />
+              </button>
+              <button
+                onClick={() => setWishListModal(true)}
+                className="header--button__wishes"
+              >
+                <img src={WishListIcon} alt="Lista de desejos" />
+              </button>
+              <button
+                className="header--button__leave"
+                onClick={() => userLogout()}
+              >
+                Sair
+                <img src={SignInIcon} alt="Sair" />
+              </button>
+            </div>
           </div>
-          <div className="header__menu__right">
-            <button className="header__button__userProfile">
-              <img src="./src/assets/user.png" alt="Perfil do usuário" />
-            </button>
-            <button className="header__button__leave">
-              <img src="./src/assets/leave.png" alt="Entrar" />
-            </button>
-          </div>
-        </div>
+        </StyledHeaderNew>
       )}
-    </StyledHeader>
+    </>
   );
 };
