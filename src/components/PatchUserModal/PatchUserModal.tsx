@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { StyledPatchUserModal } from "./styledPatchUserModal"
+import { StyledPatchUserModal } from "./styledPatchUserModal";
 import { Input } from "../Input/Input";
 import { UserContext } from "../../providers/UserContext";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TPatchFormValues, patchFormSchema } from "./patchFormSchema";
 
- 
 export const PatchUserModal = () => {
-  const { setPatchModal,patchUser,user} = useContext(UserContext);
+  const { setPatchModal, patchUser, user } = useContext(UserContext);
   const {
     register,
     handleSubmit,
+    formState: { errors },
   } = useForm<TPatchFormValues>({
     resolver: zodResolver(patchFormSchema),
   });
@@ -20,16 +20,14 @@ export const PatchUserModal = () => {
     patchUser(formData);
   };
 
-
-return(
-
-<StyledPatchUserModal>
- <div className="patchModal__container">
-       <header>
+  return (
+    <StyledPatchUserModal>
+      <div className="patchModal__container">
+        <header>
           <h3>ATUALIZAR DADOS</h3>
-          <button onClick={() =>setPatchModal(false)}>&#10005;</button>
+          <button onClick={() => setPatchModal(false)}>&#10005;</button>
         </header>
-   
+
         <form onSubmit={handleSubmit(submit)}>
           <Input
             type="text"
@@ -37,32 +35,29 @@ return(
             value={user?.name}
             id="name"
             {...register("name")}
+            error={errors.name}
           />
-          {errors.name && <p>{errors.name.message}</p>}
+
           <Input
             type="text"
             label="Foto"
             value={user?.image_url}
             id="image_url"
-            {...register("photo")}
+            {...register("image_url")}
+            error={errors.image_url}
           />
-          {errors.photo && <p>{errors.photo.message}</p>}
+
           <Input
             type="text"
             label="Email"
             value={user?.email}
             id="email"
             {...register("email")}
+            error={errors.email}
           />
-          {errors.email && <p>{errors.email.message}</p>}
-
           <button type="submit">ATUALIZAR</button>
         </form>
-       
-        </div>
-</StyledPatchUserModal>
-
-)
-
-}
-
+      </div>
+    </StyledPatchUserModal>
+  );
+};
