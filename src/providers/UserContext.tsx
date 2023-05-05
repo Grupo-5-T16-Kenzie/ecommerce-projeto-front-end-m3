@@ -5,14 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { TRegisterFormValues } from "../components/RegisterForm/regiterFormSchema";
 import { TLoginFormValues } from "../components/LoginForm/loginFormSchema";
 import { TPatchFormValues } from "../components/PatchUserModal/patchFormSchema";
-import { IUser, IUserContext, IUserLoginResponse, IUserProviderProps, IUserRegisterResponse } from "../Interfaces/Interfaces";
+import {
+  IUser,
+  IUserContext,
+  IUserLoginResponse,
+  IUserProviderProps,
+  IUserRegisterResponse,
+} from "../Interfaces/Interfaces";
 
 export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserProviderProps) => {
   const [user, setUser] = useState<IUser | null>(null);
   const [patchModal, setPatchModal] = useState(false);
-console.log(user);
 
   const navigate = useNavigate();
 
@@ -64,22 +69,6 @@ console.log(user);
     }
   };
 
-  const patchUser = async (formData: TPatchFormValues) => {
-    const userId = localStorage.getItem("@epicStyle:id");
-    const token = localStorage.getItem("@epicStyle:token");
-    try {
-      await api.patch(`/users/${userId}`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      toast.success("Atualizado com sucesso");
-    } catch (error) {
-      toast.error("Erro. Tente novamente.");
-      console.error(error);
-    }
-  };
-
   const userRegister = async (
     formData: TRegisterFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
@@ -105,6 +94,24 @@ console.log(user);
     localStorage.removeItem("@epicStyle:id");
     setUser(null);
     navigate("/");
+  };
+
+  const patchUser = async (formData: TPatchFormValues) => {
+    const userId = localStorage.getItem("@epicStyle:id");
+    const token = localStorage.getItem("@epicStyle:token");
+    try {
+      const response = await api.patch(`/users/${userId}`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setUser(response.data);
+      setPatchModal(false);
+      toast.success("Atualizado com sucesso!");
+    } catch (error) {
+      toast.error("Erro. Tente novamente.");
+      console.error(error);
+    }
   };
 
   return (

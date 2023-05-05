@@ -29,10 +29,11 @@ export const PatchUserModal = () => {
         </header>
 
         <form onSubmit={handleSubmit(submit)}>
+      
           <Input
             type="text"
             label="Nome"
-            value={user?.name}
+            defaultValue={user?.name}
             id="name"
             {...register("name")}
             error={errors.name}
@@ -40,8 +41,8 @@ export const PatchUserModal = () => {
 
           <Input
             type="text"
-            label="Foto"
-            value={user?.image_url}
+            label="Foto de perfil"
+            defaultValue={user?.image_url}
             id="image_url"
             {...register("image_url")}
             error={errors.image_url}
@@ -50,11 +51,12 @@ export const PatchUserModal = () => {
           <Input
             type="text"
             label="Email"
-            value={user?.email}
+            defaultValue={user?.email}
             id="email"
             {...register("email")}
             error={errors.email}
           />
+
           <button type="submit">ATUALIZAR</button>
         </form>
       </div>
