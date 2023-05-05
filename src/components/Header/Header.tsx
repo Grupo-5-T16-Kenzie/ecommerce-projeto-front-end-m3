@@ -22,28 +22,15 @@ export const Header = () => {
               <h1>EPIC STYLE</h1>
             </div>
             <div className="header--right__container">
-              <button
-                onClick={() => setCartModal(true)}
-                className="header--button__cart"
-              >
+              <button onClick={() => setCartModal(true)} className="header--button__cart">
                 <img src={CartIcon} alt="Carrinho de compras" />
               </button>
-              <button
-                onClick={() => setWishListModal(true)}
-                className="header--button__wishes"
-              >
+              <button onClick={() => setWishListModal(true)} className="header--button__wishes">
                 <img src={WishListIcon} alt="Lista de desejos" />
               </button>
-              <button
-                className="header--button__login"
-                onClick={() => redirectToLogin()}
-              >
+              <button className="header--button__login" onClick={() => redirectToLogin()}>
                 Entrar
-                <img
-                  className="header--button__signIn"
-                  src={SignInIcon}
-                  alt="Entrar"
-                />
+                <img className="header--button__signIn" src={SignInIcon} alt="Entrar" />
               </button>
             </div>
           </div>
@@ -55,28 +42,16 @@ export const Header = () => {
               <h1>EPIC STYLE</h1>
             </div>
             <div className="header--right__container">
-              <button
-                onClick={() => setPatchModal(true)}
-                className="header--button__userProfile"
-              >
+              <button onClick={() => setPatchModal(true)} className="header--button__userProfile">
                 <img src={UserProfileIcon} alt="Perfil do usuário" />
               </button>
-              <button
-                onClick={() => setCartModal(true)}
-                className="header--button__cart"
-              >
+              <button onClick={() => setCartModal(true)} className="header--button__cart">
                 <img src={CartIcon} alt="Carrinho de compras" />
               </button>
-              <button
-                onClick={() => setWishListModal(true)}
-                className="header--button__wishes"
-              >
+              <button onClick={() => setWishListModal(true)} className="header--button__wishes">
                 <img src={WishListIcon} alt="Lista de desejos" />
               </button>
-              <button
-                className="header--button__leave"
-                onClick={() => userLogout()}
-              >
+              <button className="header--button__leave" onClick={() => userLogout()}>
                 Sair
                 <img src={SignInIcon} alt="Sair" />
               </button>

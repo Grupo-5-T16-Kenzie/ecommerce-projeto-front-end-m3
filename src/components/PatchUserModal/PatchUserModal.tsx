@@ -12,7 +12,6 @@ export const PatchUserModal = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<TPatchFormValues>({
     resolver: zodResolver(patchFormSchema),
   });

@@ -89,6 +89,7 @@ export const StyledLoginPage = styled.div`
       transform: scale(1.01);
       background-color: #343433;
       color: var(--color-secondary);
+      cursor: pointer;
     }
   }
 
@@ -120,6 +121,10 @@ export const StyledLoginPage = styled.div`
 
     .button--login {
       margin: 10px 0;
+    }
+
+    .button--login:hover {
+      cursor: pointer;
     }
 
     .login-page__redirect {
