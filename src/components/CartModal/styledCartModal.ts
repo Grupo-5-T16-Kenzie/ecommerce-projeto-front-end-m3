@@ -43,7 +43,7 @@ export const StyledCartModal = styled.div`
   }
 
   .emptyCart__container span {
-    color: #605f5f;
+    color: var(--color-grey-1);
   }
 
   .notEmptyCart__container {
@@ -72,7 +72,7 @@ export const StyledCartModal = styled.div`
   }
 
   .notEmptyCart__container .item__info .item__price {
-    color: #9a9999;
+    color: var(--color-grey-1);
   }
 
   .notEmptyCart__container .product__image {
@@ -102,7 +102,7 @@ export const StyledCartModal = styled.div`
     padding: 0;
     outline: inherit;
     transition: all;
-    color: #bb4e4e;
+    color: var(--color-negative);
     font-size: 16px;
     font-weight: bold;
   }
@@ -114,7 +114,7 @@ export const StyledCartModal = styled.div`
     padding: 0;
     outline: inherit;
     transition: all;
-    color: #bb4e4e;
+    color: var(--color-negative);
   }
 
   .deleteItem__btn img {
@@ -129,7 +129,7 @@ export const StyledCartModal = styled.div`
   }
 
   .notEmptyCart__container .itemQuantity__container .itemQuantity {
-    background-color: #d9d9d9;
+    background-color: var(--color-secondary);
     padding: 4px 10px;
     border-radius: 5px;
     font-weight: 500;
@@ -146,8 +146,7 @@ export const StyledCartModal = styled.div`
     justify-content: space-between;
     padding: 20px 15px;
     font-weight: 600;
-    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
-      drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
     border-radius: 2px 2px 0 0;
   }
 

@@ -23,7 +23,7 @@ export const AuthProductsProvider = ({ children }: IProductsProviderProps) => {
           }))
         );
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     getProducts();

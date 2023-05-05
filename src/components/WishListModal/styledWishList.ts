@@ -64,7 +64,7 @@ export const StyledWishListModal = styled.div`
   }
 
   .emptyWishList__container span {
-    color: #605f5f;
+    color: var(--color-grey-1);
   }
 
   .wishList__container ul {
@@ -110,12 +110,12 @@ export const StyledWishListModal = styled.div`
 
   .wishList__container .itemInfo__container .item__category {
     font-size: 0.75rem;
-    color: #9a9999;
+    color: var(--color-grey-1);
   }
 
   .wishList__container .itemInfo__container .item__price {
     font-size: 0.75rem;
-    color: #9a9999;
+    color: var(--color-grey-1);
   }
 
   .wishList__container .btns__container {

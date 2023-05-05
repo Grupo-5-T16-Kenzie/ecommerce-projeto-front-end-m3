@@ -72,7 +72,17 @@ export const StyledRegisterPage = styled.div`
     button:hover {
       transform: scale(1.01);
       background-color: #343433;
+      cursor: pointer;
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    transform: scale(1.02);
   }
 
   @media (min-width: 1023px) {

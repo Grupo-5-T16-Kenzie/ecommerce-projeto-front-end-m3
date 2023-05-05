@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { CartContext } from "../../providers/CartContext";
-import { ProductsContext } from "../../providers/ProductsContext";
 import { UserContext } from "../../providers/UserContext";
 import UserProfileIcon from "../../assets/header/png/user.png";
 import CartIcon from "../../assets/header/png/cart.png";
 import WishListIcon from "../../assets/header/png/wishes.png";
 import SignInIcon from "../../assets/header/png/enter.png";
 import { StyledHeaderNew } from "./styledHeader";
+import { ProductsContext } from "../../providers/ProductsContext";
 
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);
@@ -43,7 +43,11 @@ export const Header = () => {
             </div>
             <div className="header--right__container">
               <button onClick={() => setPatchModal(true)} className="header--button__userProfile">
-                <img src={UserProfileIcon} alt="Perfil do usuário" />
+                <img
+                  src={user.image_url ? user.image_url : UserProfileIcon}
+                  alt="Perfil do usuário"
+                  className="header--img__userProfile"
+                />
               </button>
               <button onClick={() => setCartModal(true)} className="header--button__cart">
                 <img src={CartIcon} alt="Carrinho de compras" />

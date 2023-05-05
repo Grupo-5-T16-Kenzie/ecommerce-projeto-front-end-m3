@@ -36,7 +36,31 @@ export const StyledProductsList = styled.div`
     }
   }
 
-  @media (min-height: 928px) {
+  @media (min-height: 440px) {
+    .products__list {
+      max-height: 350px;
+    }
+  }
+
+  @media (min-height: 645px) {
+    .products__list {
+      max-height: 430px;
+    }
+  }
+
+  @media (min-height: 725px) {
+    .products__list {
+      max-height: 500px;
+    }
+  }
+
+  @media (min-height: 820px) {
+    .products__list {
+      max-height: 580px;
+    }
+  }
+
+  @media (min-height: 900px) {
     .products__list {
       max-height: 660px;
     }
