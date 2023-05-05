@@ -42,6 +42,12 @@ export const StyledHeaderNew = styled.div`
     max-height: 30px;
   }
 
+  .header--img__userProfile {
+    border-radius: 100%;
+    max-height: 35px;
+
+  }
+
   button {
     background: none;
     color: inherit;
