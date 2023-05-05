@@ -6,7 +6,7 @@ import CartIcon from "../../assets/header/png/cart.png";
 import WishListIcon from "../../assets/header/png/wishes.png";
 import SignInIcon from "../../assets/header/png/enter.png";
 import { StyledHeaderNew } from "./styledHeader";
-import { ProductsContext } from "../../providers/productsContext";
+import { ProductsContext } from "../../providers/ProductsContext";
 
 export const Header = () => {
   const { setCartModal, setWishListModal } = useContext(CartContext);

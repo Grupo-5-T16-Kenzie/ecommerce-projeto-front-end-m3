@@ -49,7 +49,7 @@ export const StyledPatchUserModal = styled.div`
   }
 
   form {
-    background: #d9d9d9;
+    background-color: var(--color-secondary);
     padding: 27px;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@ export const StyledPatchUserModal = styled.div`
 
     button {
       background-color: black;
-      color: #fff;
+      color: var(--color-grey-0);
       border-radius: 5px;
       max-width: 289px;
       min-width: 289px;
@@ -71,7 +71,7 @@ export const StyledPatchUserModal = styled.div`
 
     button:hover {
       transform: scale(1.02);
-      background-color: #343433;
+      background-color: var(--color-grey-2);
       cursor: pointer;
     }
   }

@@ -48,14 +48,14 @@ export const StyledCartTotal = styled.div`
   }
 
   .btns__container .remove {
-    background-color: #d9d9d9;
-    color: #9a9999;
+    background-color: var(--color-secondary);
+    color: var(--color-grey-2);
     padding: 10px 0px;
     border-radius: 5px;
   }
 
   .btns__container .remove:hover {
-    background-color: #9a9988;
-    color: black;
+    background-color: var(--color-grey-2);
+    color: var(--color-grey-0);
   }
 `;

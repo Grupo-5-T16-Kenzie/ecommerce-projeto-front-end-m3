@@ -6,7 +6,7 @@ import {
   IProduct,
 } from "../Interfaces/Interfaces";
 import { toast } from "react-toastify";
-import {ProductsContext} from "./productsContext";
+import { ProductsContext } from "./ProductsContext";
 
 export const CartContext = createContext({} as ICartContext);
 

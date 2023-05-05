@@ -74,7 +74,6 @@ export interface IHeader {
   token: string | null;
 }
 
-
 export interface IUserProviderProps {
   children: React.ReactNode;
 }
