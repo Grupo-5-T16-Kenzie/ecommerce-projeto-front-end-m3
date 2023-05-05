@@ -5,7 +5,7 @@ import {
   ICartProviderProps,
   IProduct,
 } from "../Interfaces/Interfaces";
-import { ProductsContext } from "./ProductsContext";
+import { ProductsContext } from "../providers/ProductsContext";
 import { toast } from "react-toastify";
 
 export const CartContext = createContext({} as ICartContext);
@@ -39,10 +39,7 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         finalPrice: 0,
       };
 
-      setCartProducts([
-        ...cartProducts,
-        productWithQuantity,
-      ] as ICartProducts[]);
+      setCartProducts([...cartProducts, productWithQuantity] as ICartProducts[]);
       toast.success("Item adicionado ao carrinho");
     }
   };

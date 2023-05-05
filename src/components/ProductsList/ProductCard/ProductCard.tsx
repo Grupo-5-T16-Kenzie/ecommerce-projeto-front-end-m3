@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { IProductCardProps } from "../../../Interfaces/Interfaces";
 import { StyledProductcard } from "./styles";
 import { CartContext } from "../../../providers/CartContext";
+import LikeHeart from "../../../assets/header/png/wishes.png";
 
 export const ProductCard = ({ product }: IProductCardProps) => {
   const { handleAddItemToCart, handleAddItemToWishList } =
@@ -18,7 +19,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
         <img
           onClick={() => handleAddItemToWishList(product.id)}
           className="product__imgLike__card"
-          src="./src/assets/header/png/wishes.png"
+          src={LikeHeart}
           alt="like"
         />
       </div>
