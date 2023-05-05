@@ -5,8 +5,8 @@ import {
   ICartProviderProps,
   IProduct,
 } from "../Interfaces/Interfaces";
-import { ProductsContext } from "../providers/ProductsContext";
 import { toast } from "react-toastify";
+import {ProductsContext} from "./productsContext";
 
 export const CartContext = createContext({} as ICartContext);
 

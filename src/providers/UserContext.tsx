@@ -12,6 +12,7 @@ export const UserContext = createContext({} as IUserContext);
 export const UserProvider = ({ children }: IUserProviderProps) => {
   const [user, setUser] = useState<IUser | null>(null);
   const [patchModal, setPatchModal] = useState(false);
+console.log(user);
 
   const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         setUser(data);
         navigate("/dashboard");
       } catch (error) {
-        console.log(error);
+        console.error(error);
         localStorage.removeItem("@epicStyle:token");
         localStorage.removeItem("@epicStyle:id");
       }
@@ -57,7 +58,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       });
     } catch (error) {
       toast.error("Erro ao fazer login. Tente novamente.");
-      console.log(error);
+      console.error(error);
     } finally {
       setLoading(false);
     }
@@ -75,7 +76,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       toast.success("Atualizado com sucesso");
     } catch (error) {
       toast.error("Erro. Tente novamente.");
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -93,7 +94,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       });
     } catch (error) {
       toast.error("Erro ao criar conta. Tente novamente.");
-      console.log(error);
+      console.error(error);
     } finally {
       setLoading(false);
     }
