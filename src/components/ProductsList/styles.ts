@@ -38,7 +38,7 @@ export const StyledProductsList = styled.div`
 
   @media (min-height: 440px) {
     .products__list {
-      max-height: 210px;
+      max-height: 350px;
     }
   }
 
